@@ -86,6 +86,7 @@ void parse_file ( char * filename,
         //
       }
       if(!strcmp(line,"display")){
+        //clear_screen(s);
         draw_lines(edges,s,c);
         display(s);
       }
@@ -137,23 +138,13 @@ void parse_file ( char * filename,
         matrix_mult(current, transform);
       }
       if(!strcmp(holder,"save")){
-        clear_screen(s);
+        //clear_screen(s);
         draw_lines(edges,s,c);
         save_extension(s, inputs[0]);
       }
     }
   }
 }
-//
-// int arguments (char * line){
-//   if(!strcmp(line,"quit") || !strcmp(line,"display") || !strcmp(line,"apply") || !strcmp(line,"ident")){
-//     return 1;
-//   }else if(!strcmp(line,"line") || !strcmp(line,"scale") || !strcmp(line,"translate") || !strcmp(line,"rotate") || !strcmp(line,"save")){
-//     return 2;
-//   }else{
-//   return 0;
-// }
-// }
 
 void trim(char * input){
   char * last;
